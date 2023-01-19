@@ -1,0 +1,26 @@
+#dvc.yaml(schema.json)
+stages:
+  stage1:
+    cmd: python stage1.py
+    deps:
+      - stage1.py
+    outs:
+      - artifacts.txt
+
+  stage2:
+    cmd: python stage2.py
+    deps:
+      - artifacts.txt
+      - stage2.py
+
+
+  stage3:
+    cmd: python stage3.py
+    deps:
+      - artifacts.txt
+      - stage3.py
+    outs: 
+      - artifacts2.txt
+
+
+
